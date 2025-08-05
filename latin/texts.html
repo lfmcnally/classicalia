@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latin Set Texts - Classicalia</title>
+    <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+    <!-- Global Info Button -->
+    <button onclick="showInfoModal()" class="global-info-btn">ℹ️</button>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="../index.html" style="text-decoration: none; color: inherit;">Classicalia</a>
+            </div>
+            <div class="author">by Lawrence McNally</div>
+            <div class="subtitle">Latin Set Texts</div>
+            
+            <div class="page-nav">
+                <a href="../index.html" class="nav-link">← Back to Home</a>
+                <a href="vocabulary.html" class="nav-link">← Vocabulary Tester</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container-texts">
+            <h2 style="margin-bottom: 2rem; color: #495057;">OCR GCSE Set Texts</h2>
+            
+            <div class="text-list">
+                <div class="text-card active" onclick="selectText('messalina')">
+                    <h3>Messalina</h3>
+                    <p>Tacitus, Annals XI.26-38 - The story of Messalina's downfall and execution</p>
+                </div>
+                <div class="text-card" onclick="selectText('future')" style="opacity: 0.6;">
+                    <h3>Coming Soon</h3>
+                    <p>Additional set texts will be added here</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <div id="messalina-videos">
+                    <h3 style="margin-bottom: 2rem; color: #495057;">Messalina Video Tutorials</h3>
+                    
+                    <div class="video-list">
+                        <div class="video-item">
+                            <div class="video-title">1. Silius is forced to have an affair with Messalina</div>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/7ZlSWwnVIaE" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-title">2. Messalina's visits to Silius become increasingly more frequent</div>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/l56H6L2UA9U" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="video-item">
+                            <div class="video-title">3. Eventually, Messalina decides to marry Silius</div>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/m0ZRHfrNsNk" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="video-item">
+                            <div class="video-title">4. Widespread knowledge of the affair prompts Narcissus to take action</div>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/QYfI8azm-Ss" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="video-item">
+                            <div class="video-title">5. The marriage becomes known to Claudius</div>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/5GcV2h5oJlk" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="video-item">
+                            <div class="video-title">6. Silius hides and Messalina appeals to Claudius</div>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/VRgeFLVZMIU" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="video-item">
+                            <div class="video-title">7. Narcissus arranges the assassination of Messalina</div>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/L1li7aVAsWA" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="video-item">
+                            <div class="video-title">8. Narcissus orders a tribune to murder Messalina</div>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/OdQUvvFW8kI" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="video-item">
+                            <div class="video-title">9. Messalina is killed by the tribune</div>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/x2j8K4RZG4k" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="future-videos" class="hidden">
+                    <h3 style="color: #495057;">More Set Texts Coming Soon</h3>
+                    <p style="color: #6c757d;">Additional set text resources will be added here.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Info Modal -->
+    <div id="infoModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeInfoModal()">&times;</span>
+            
+            <div class="modal-header">
+                <h2>salve! 👋</h2>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-text">
+                    <p>Thank you for checking out Classicalia! I'm Lawrence and I teach Latin and Classics in Bristol.</p>
+                    
+                    <p>I have a BA in Ancient History from King's College London, a PGCE in Latin with Classics from the University of Cambridge and an MEd (Transforming Practice) from Darwin College, Cambridge. I am particularly interested in Tacitean studies and the history of memory in classical antiquity. In 2021 I won the Classical Association's 'Outstanding New Teacher' award.</p>
+                    
+                    <p>I also enjoy creating teacher guides and student workbooks. Please feel free to use my resources!</p>
+                    
+                    <p>If you have any feedback, thoughts or questions, please don't hesitate to get in touch!</p>
+                </div>
+                
+                <div class="modal-image">
+                    <img src="../images/lmc.jpg" alt="Lawrence McNally">
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <div class="contact-icon">🐦</div>
+                        <div class="contact-info">
+                            <div class="contact-label">Follow me on Twitter</div>
+                            <div class="contact-value">@lfmcnally</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🎵</div>
+                        <div class="contact-info">
+                            <div class="contact-label">Follow me on TikTok</div>
+                            <div class="contact-value">@classicalcivilisation</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-signature">
+                    <p>An open-source project made with ❤️</p>
+                    <p><strong>-Lawrence</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function showInfoModal() {
+            document.getElementById('infoModal').style.display = 'block';
+        }
+
+        function closeInfoModal() {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('infoModal');
+            if (event.target === modal) {
+                closeInfoModal();
+            }
+        }
+
+        // Set text selection
+        function selectText(textName) {
+            // Update active text card
+            document.querySelectorAll('.text-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Show corresponding videos
+            document.getElementById('messalina-videos').classList.add('hidden');
+            document.getElementById('future-videos').classList.add('hidden');
+            
+            if (textName === 'messalina') {
+                document.getElementById('messalina-videos').classList.remove('hidden');
+            } else {
+                document.getElementById('future-videos').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
