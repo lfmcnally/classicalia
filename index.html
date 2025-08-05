@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classicalia - All things Classics, in one place</title>
-    <link rel="stylesheet" href="shared/styles.css">
+    <title>Greek Vocabulary Tester - Classicalia</title>
+    <link rel="stylesheet" href="../shared/styles.css">
 </head>
 <body>
     <!-- Global Info Button -->
@@ -12,76 +12,108 @@
 
     <header class="header">
         <div class="header-content">
-            <div class="logo">Classicalia</div>
+            <div class="logo">
+                <a href="../index.html" style="text-decoration: none; color: inherit;">Classicalia</a>
+            </div>
             <div class="author">by Lawrence McNally</div>
-            <div class="subtitle">All things Classics, in one place</div>
+            <div class="subtitle">Greek Vocabulary Tester</div>
+            
+            <div class="page-nav">
+                <a href="../index.html" class="nav-link">← Back to Home</a>
+                <a href="texts.html" class="nav-link">Set Texts →</a>
+            </div>
         </div>
     </header>
 
-    <main class="landing-main">
-        <div class="landing-container">
-            <div class="welcome-section">
-                <h2>Welcome to Classicalia</h2>
-                <p>Your comprehensive resource for Latin, Greek, and Classical Civilisation studies. Choose a subject below to get started.</p>
-            </div>
-
-            <div class="subjects-grid">
-                <!-- Latin Section -->
-                <div class="subject-card latin-card">
-                    <div class="subject-header">
-                        <h3>Latin</h3>
-                        <div class="subject-icon">🏛️</div>
-                    </div>
-                    <p>Master Latin vocabulary and explore set texts with interactive tools and video tutorials.</p>
-                    <div class="subject-links">
-                        <a href="latin/vocabulary.html" class="btn btn-latin">Vocabulary Tester</a>
-                        <a href="latin/texts.html" class="btn btn-latin-secondary">Set Texts</a>
-                    </div>
+    <main>
+        <div class="container">
+            <!-- Main Quiz Area -->
+            <div class="quiz-area">
+                <!-- Greek Word Display -->
+                <div class="word-display">
+                    <div class="latin-word" id="greek-word">θεός</div>
+                    <div class="word-info" id="word-info">θεοῦ, ὁ - noun 2</div>
                 </div>
 
-                <!-- Greek Section -->
-                <div class="subject-card greek-card">
-                    <div class="subject-header">
-                        <h3>Greek</h3>
-                        <div class="subject-icon">🏺</div>
+                <!-- Answer Input -->
+                <div class="answer-section">
+                    <input type="text" class="form-control" id="answer-input" placeholder="Enter the English meaning..." autocomplete="off">
+                    
+                    <div class="btn-group">
+                        <button class="btn" onclick="checkAnswer()" id="check-btn">Check Answer</button>
+                        <button class="btn btn-secondary hidden" onclick="nextQuestion()" id="next-btn">Next Word</button>
+                        <button class="btn btn-warning" onclick="revealAnswer()" id="reveal-btn">Reveal Answer</button>
                     </div>
-                    <p>Explore Ancient Greek vocabulary and literature with comprehensive learning resources.</p>
-                    <div class="subject-links">
-                        <a href="greek/vocabulary.html" class="btn btn-greek">Vocabulary Tester</a>
-                        <a href="greek/texts.html" class="btn btn-greek-secondary">Set Texts</a>
-                    </div>
-                    <div class="coming-soon">Coming Soon</div>
+                    
+                    <div id="feedback" class="feedback"></div>
                 </div>
 
-                <!-- Classical Civilisation Section -->
-                <div class="subject-card civ-card">
-                    <div class="subject-header">
-                        <h3>Classical Civilisation</h3>
-                        <div class="subject-icon">⚱️</div>
+                <!-- Progress Section -->
+                <div class="progress-section">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
                     </div>
-                    <p>Dive into the history, culture, and society of the ancient world with curated topics and resources.</p>
-                    <div class="subject-links">
-                        <a href="classical-civ/topics.html" class="btn btn-civ">Topics</a>
-                        <a href="classical-civ/resources.html" class="btn btn-civ-secondary">Resources</a>
+                    
+                    <div>Question <span id="current-question">1</span> of <span id="total-questions">10</span></div>
+                    
+                    <div class="stats">
+                        <div>Score: <span id="score">0</span>/<span id="answered">0</span> (<span id="percentage">0</span>%)</div>
+                        <div id="completion-message" class="hidden" style="margin-top: 1rem; padding: 1rem; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; color: #155724;">
+                            <strong>Test Complete!</strong><br>
+                            <span id="final-message"></span>
+                        </div>
                     </div>
-                    <div class="coming-soon">Coming Soon</div>
                 </div>
             </div>
 
-            <div class="about-section">
-                <h3>About This Project</h3>
-                <p>Classicalia is designed to make learning classics more accessible and engaging. All tools are free to use and designed with students and teachers in mind.</p>
+            <!-- Settings Panel -->
+            <div class="settings-panel">
+                <h3>Test Settings</h3>
+                
+                <!-- Chapter Selection -->
+                <div class="setting-section">
+                    <h4>Chapter</h4>
+                    <div class="chapter-buttons">
+                        <button class="chapter-btn active" data-chapter="all">All</button>
+                        <button class="chapter-btn" data-chapter="1">1</button>
+                        <button class="chapter-btn" data-chapter="2">2</button>
+                        <button class="chapter-btn" data-chapter="3">3</button>
+                        <button class="chapter-btn" data-chapter="4">4</button>
+                        <button class="chapter-btn" data-chapter="5">5</button>
+                        <button class="chapter-btn" data-chapter="6">6</button>
+                        <button class="chapter-btn" data-chapter="7">7</button>
+                        <button class="chapter-btn" data-chapter="8">8</button>
+                        <button class="chapter-btn" data-chapter="9">9</button>
+                        <button class="chapter-btn" data-chapter="10">10</button>
+                    </div>
+                </div>
+
+                <!-- Test Length -->
+                <div class="setting-section">
+                    <h4>Test Length</h4>
+                    <div class="length-buttons">
+                        <button class="length-btn active" data-length="10">10</button>
+                        <button class="length-btn" data-length="25">25</button>
+                        <button class="length-btn" data-length="50">50</button>
+                        <button class="length-btn" data-length="all">All</button>
+                    </div>
+                </div>
+
+                <!-- Chapter Info -->
+                <div id="chapter-info" class="chapter-info hidden">
+                    <div id="chapter-details"></div>
+                </div>
             </div>
         </div>
     </main>
 
     <!-- Info Modal -->
-    <div id="infoModal" class="modal" style="display: none;">
+    <div id="infoModal" class="modal" style="display: none !important;">
         <div class="modal-content">
             <span class="close" onclick="closeInfoModal()">&times;</span>
             
             <div class="modal-header">
-                <h2>salve! 👋</h2>
+                <h2>χαῖρε! 👋</h2>
             </div>
             
             <div class="modal-body">
@@ -96,7 +128,7 @@
                 </div>
                 
                 <div class="modal-image">
-                    <img src="images/lmc.jpg" alt="Lawrence McNally">
+                    <img src="../images/lmc.jpg" alt="Lawrence McNally">
                 </div>
             </div>
             
@@ -127,7 +159,17 @@
         </div>
     </div>
 
+    <!-- JavaScript -->
+    <script src="../shared/greek-vocabulary-data.js"></script>
+    <script src="../shared/navigation.js"></script>
+    <script src="../shared/greek-vocabulary-quiz.js"></script>
+    
     <script>
+        // Ensure modal stays closed on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('infoModal').style.display = 'none';
+        });
+        
         // Modal functions
         function showInfoModal() {
             document.getElementById('infoModal').style.display = 'block';
