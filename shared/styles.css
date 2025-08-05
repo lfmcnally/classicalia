@@ -209,8 +209,8 @@ body {
 
 .coming-soon {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
     background: #ffc107;
     color: #333;
     padding: 0.25rem 0.75rem;
@@ -218,6 +218,7 @@ body {
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
+    z-index: 2;
 }
 
 /* NEW BADGE */
