@@ -223,8 +223,8 @@ body {
 /* NEW BADGE */
 .new-badge {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
     background: #28a745;
     color: white;
     padding: 0.25rem 0.75rem;
@@ -238,8 +238,8 @@ body {
 /* COMING SOON BADGE - MOVED TO MATCH NEW BADGE POSITION */
 .coming-soon {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
     background: #ffc107;
     color: #333;
     padding: 0.25rem 0.75rem;
