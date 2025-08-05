@@ -76,7 +76,7 @@
     </main>
 
     <!-- Info Modal -->
-    <div id="infoModal" class="modal">
+    <div id="infoModal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close" onclick="closeInfoModal()">&times;</span>
             
@@ -127,6 +127,23 @@
         </div>
     </div>
 
-    <script src="shared/navigation.js"></script>
+    <script>
+        // Modal functions
+        function showInfoModal() {
+            document.getElementById('infoModal').style.display = 'block';
+        }
+
+        function closeInfoModal() {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('infoModal');
+            if (event.target === modal) {
+                closeInfoModal();
+            }
+        }
+    </script>
 </body>
 </html>
